@@ -1,7 +1,8 @@
 {
     "compilerOptions": {
         "outDir": "./dist",
-        "module": "commonjs"
+        "module": "commonjs",
+        "lib": ["es2018"]
     },
     "include": ["./src/**/*.ts"],
     "exclude": ["node_modules"]
