@@ -1,6 +1,6 @@
 {
   "name": "natalya-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Natalya voice assistant core",
   "main": "./dist/index.js",
   "scripts": {
