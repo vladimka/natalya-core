@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "outDir": "./",
+        "declaration": true,
+        "declarationDir": "./types",
+        "module": "commonjs"
+    },
+    "include": ["./src/**/*.ts"],
+    "exclude": ["node_modules"]
+}
