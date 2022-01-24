@@ -1,5 +1,4 @@
 import { readFileSync, existsSync } from 'fs';
-import { join } from 'path';
 import debug from 'debug';
 import Context from "./context";
 
@@ -27,8 +26,8 @@ class Brains{
     public sessions: Array<ISession>;
 
     constructor(sinonimsFile = 'sinonims.json', answersFile = 'answers.json'){
-        this.sinonimsFile = join(__dirname, sinonimsFile);
-        this.answersFile = join(__dirname, answersFile);
+        this.sinonimsFile = sinonimsFile;
+        this.answersFile = answersFile;
         this.sinonims = {};
         this.answers = {};
         this.contexts = {};

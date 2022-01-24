@@ -1,8 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./",
-        "declaration": true,
-        "declarationDir": "./types",
+        "outDir": "./dist",
         "module": "commonjs"
     },
     "include": ["./src/**/*.ts"],
