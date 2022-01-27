@@ -1,6 +1,6 @@
 {
   "name": "natalya-core",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Natalya voice assistant core",
   "main": "./dist/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "postinstall": "npm run build",
     "dev": "gulp dev",
     "dev:watch": "gulp dev:watch",
-    "clean" : "rimraf ./dist"
+    "clean": "rimraf ./dist"
   },
   "repository": {
     "type": "git",
