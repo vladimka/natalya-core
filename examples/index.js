@@ -1,7 +1,10 @@
-const { Brains } = require('../dist/index');
-const path = require('path');
-const natalya = new Brains(path.join(__dirname, 'sinonims.json'), path.join(__dirname, 'answers.json'));
+const { Natalya } = require('../dist/index');
+
+const sinonims = require('./sinonims.json');
+const answers = require('./answers.json');
+const natalya = new Natalya({ sinonims, answers });
 const sid = 1;
+
 natalya.addSession(sid);
 
 process.stdin.setEncoding('utf-8');

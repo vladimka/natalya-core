@@ -1,4 +1,3 @@
-import { readFileSync, existsSync } from 'fs';
 import debug from 'debug';
 import Context from "./context";
 
@@ -17,23 +16,17 @@ interface ISession{
     currentContext: Context | null;
 }
 
-class Brains{
-    public sinonimsFile: string;
-    public answersFile: string;
+class Natalya{
     public sinonims: Object;
     public answers: Object;
     public contexts: Object;
     public sessions: Array<ISession>;
 
-    constructor(sinonimsFile = 'sinonims.json', answersFile = 'answers.json'){
-        this.sinonimsFile = sinonimsFile;
-        this.answersFile = answersFile;
-        this.sinonims = {};
-        this.answers = {};
+    constructor({ answers, sinonims }){
+        this.sinonims = sinonims;
+        this.answers = answers;
         this.contexts = {};
         this.sessions = [];
-
-        this.loadConfiguration();
     }
 
     getSession(id): ISession {
@@ -134,22 +127,6 @@ class Brains{
         return answers.length > 0 ? answers.join(' ') : "Извините, я вас не поняла. Можете повторить?";
     }
 
-    loadConfiguration(){
-        log('Инициализация.\nЗагрузка конфигурации...');
-
-        if(!existsSync(this.sinonimsFile))
-            throw new InitializationError('Инициализация провалена: Файл синонимов не найден');
-
-        this.sinonims = JSON.parse(readFileSync(this.sinonimsFile, 'utf-8'));
-
-        if(!existsSync(this.answersFile))
-            throw new InitializationError('Инициализация провалена: Файл ответов не найден');
-
-        this.answers = JSON.parse(readFileSync(this.answersFile, 'utf-8'));
-
-        log('Инициализация закончена.');
-    }
-
     addSession(sid){
         this.sessions.push({ sid, currentContext : null });
     }
@@ -160,6 +137,6 @@ class Brains{
 }
 
 export {
-    Brains,
+    Natalya,
     InitializationError
 }
